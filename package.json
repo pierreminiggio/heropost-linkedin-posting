@@ -1,0 +1,26 @@
+{
+  "name": "@pierreminiggio/heropost-linkedin-posting",
+  "version": "1.0.0",
+  "description": "Heropost Linkedin Posting",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pierreminiggio/heropost-linkedin-posting.git"
+  },
+  "author": "Pierre MINIGGIO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pierreminiggio/heropost-linkedin-posting/issues"
+  },
+  "homepage": "https://github.com/pierreminiggio/heropost-linkedin-posting#readme",
+  "dependencies": {
+    "@pierreminiggio/heropost-login": "github:pierreminiggio/heropost-login",
+    "@pierreminiggio/puppeteer-text-typer": "github:pierreminiggio/puppeteer-text-typer",
+    "@pierreminiggio/set-default-value-for-key-in-object": "github:pierreminiggio/js-set-default-value-for-key-in-object",
+    "puppeteer": "^8.0.0"
+  }
+}
