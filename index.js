@@ -1,6 +1,7 @@
 import loginToHeropost from '@pierreminiggio/heropost-login'
 import puppeteer from 'puppeteer'
 import setDefault from '@pierreminiggio/set-default-value-for-key-in-object'
+import getToastMessage from '@pierreminiggio/heropost-toast-message-getter'
 import type from '@pierreminiggio/puppeteer-text-typer'
 
 /**
@@ -189,30 +190,5 @@ export function postLink(login, password, accountOrPageId, link, config = {}) {
             await browser.close()
             reject(e)
         }
-    })
-}
-
-/**
- * @param {puppeteer.Page} page
- * 
- * @returns {Promise<string>} 
- */
-function getToastMessage(page) {
-    return new Promise(async resolve => {
-        const message = await page.evaluate(async () => {
-            const message = await new Promise(resolve => {
-                const toastInterval = setInterval(() => {
-                    const toast = document.querySelector('.iziToast')
-                    if (toast !== null && toast.innerText.trim()) {
-                        resolve(toast.innerText)
-                        clearInterval(toastInterval)
-                    }
-                }, 10)
-            })
-
-            return message
-        })
-
-        resolve(message)
     })
 }
